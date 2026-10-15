@@ -91,11 +91,11 @@ p { margin: 0; }
 .hero { padding: 88px 0 72px; }
 .hello { color: var(--accent); font-weight: 600; font-size: 19px; margin-bottom: 20px; }
 h1 {
-  font-size: clamp(44px, 8.6vw, 96px);
+  font-size: clamp(40px, 7vw, 80px);
   font-weight: 800;
   line-height: 1.02;
   letter-spacing: -0.045em;
-  max-width: 13ch;
+  max-width: 16ch;
 }
 .lead {
   font-size: clamp(19px, 2.2vw, 23px);
