@@ -106,11 +106,11 @@ h1 {
 }
 
 .proof {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
   margin: 64px 0 0; border-top: 1px solid var(--line);
 }
-.proof > div { padding: 24px 28px 8px 0; }
-.proof > div + div { padding-left: 28px; border-left: 1px solid var(--line); }
+.proof > div { padding: 24px 22px 8px 0; }
+.proof > div + div { padding-left: 22px; border-left: 1px solid var(--line); }
 .proof dt { font-weight: 700; font-size: 20px; letter-spacing: -0.015em; line-height: 1.25; }
 .proof dd { margin: 8px 0 0; color: var(--muted); font-size: 16px; }
 
@@ -125,18 +125,18 @@ h1 {
 .section-head p { color: var(--muted); margin-top: 10px; font-size: 19px; }
 
 /* Case studies */
-.case, .agent {
+.case, .agent, .teach {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   padding: clamp(24px, 4vw, 44px);
   margin-bottom: 28px;
 }
-.case-top, .agent-top {
+.case-top, .agent-top, .teach-top {
   display: flex; justify-content: space-between; align-items: flex-start;
   gap: 24px; flex-wrap: wrap;
 }
-.case h3, .agent h3 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 800; letter-spacing: -0.03em; }
+.case h3, .agent h3, .teach h3 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 800; letter-spacing: -0.03em; }
 .case-sub { color: var(--muted); margin-top: 8px; font-size: 18px; max-width: 40em; }
 
 .credits { display: flex; gap: 28px; margin: 0; }
@@ -174,8 +174,8 @@ h1 {
 .link svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
 
 /* AI agent */
-.agent h4 { font-size: 19px; font-weight: 700; margin-bottom: 8px; }
-.agent p { color: #2b2f3a; }
+.agent h4, .teach h4 { font-size: 19px; font-weight: 700; margin-bottom: 8px; }
+.agent p, .teach p { color: #2b2f3a; }
 
 .before-after {
   display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px;
@@ -214,6 +214,16 @@ h1 {
 .fixes tbody th { font-weight: 700; width: 32%; }
 .fixes td { color: #2b2f3a; }
 
+/* Teaching */
+.teach-stats { list-style: none; padding: 0; margin: 32px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.teach-stats li { background: var(--soft); border-radius: var(--radius-md); padding: 20px 24px; display: grid; gap: 4px; align-content: start; }
+.teach-stats strong { font-size: clamp(32px, 4.2vw, 44px); font-weight: 800; letter-spacing: -0.035em; line-height: 1.1; color: var(--accent); }
+.teach-stats span { color: var(--muted); font-size: 15px; }
+.teach-where { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+.teach-where > div { background: var(--tint); border-radius: var(--radius-md); padding: 22px 26px; }
+.teach-where h4 { margin-bottom: 2px; }
+.teach-years { font-weight: 700; color: #1d33a8 !important; margin-bottom: 8px; }
+
 /* Contact and footer */
 .contact { padding: 56px 0 72px; }
 .contact h2 { font-size: clamp(32px, 4.6vw, 48px); font-weight: 800; letter-spacing: -0.035em; }
@@ -226,8 +236,14 @@ h1 {
 .footer-inner { display: flex; justify-content: space-between; padding: 24px 0; }
 
 /* Responsive */
+@media (max-width: 1000px) {
+  .proof { grid-template-columns: 1fr; }
+  .proof > div, .proof > div + div { padding: 20px 0; border-left: 0; }
+  .proof > div + div { border-top: 1px solid var(--line); }
+}
+
 @media (max-width: 900px) {
-  .case-body, .two-col, .onepager-grid, .before-after { grid-template-columns: 1fr; }
+  .case-body, .two-col, .onepager-grid, .before-after, .teach-stats, .teach-where { grid-template-columns: 1fr; }
   .proof { grid-template-columns: 1fr; }
   .proof > div, .proof > div + div { padding: 20px 0; border-left: 0; }
   .proof > div + div { border-top: 1px solid var(--line); }
